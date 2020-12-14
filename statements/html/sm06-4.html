@@ -1,0 +1,117 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <table border="1">
+   <tr>
+    <td>
+     <b>
+      Time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      2 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Real time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      5 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Memory limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      64M
+     </tt>
+    </td>
+   </tr>
+  </table>
+  <h3>
+   Problem sm06-4: c/random/random-ops-3
+  </h3>
+  <p>
+   Определите структуру
+   <tt>
+    RandomOperations
+   </tt>
+   с полями
+   <tt>
+    destroy
+   </tt>
+   и
+   <tt>
+    next
+   </tt>
+   —
+указателями на функции.
+  </p>
+  <p>
+   Определите структуру
+   <tt>
+    RandomGenerator
+   </tt>
+   с необходимыми полями.
+  </p>
+  <pre>typedef struct RandomGenerator
+{
+//…
+} RandomGenerator;</pre>
+  <p>
+   напишите реализацию функции
+  </p>
+  <pre>RandomGenerator *random_create(int seed);</pre>
+  <p>
+   напишите реализации недостающих функций таким образом, чтобы фрагмент
+  </p>
+  <pre>RandomGenerator *rr = random_create(1234);
+for (int j = 0; j &lt; 100; ++j) {
+  printf("%d\n", rr-&gt;ops-&gt;next(rr));
+}
+rr-&gt;ops-&gt;destroy(rr);
+</pre>
+  <p>
+   выводил на печать 100 псевдослучайных чисел,
+полученных с помощью линейного конгруэнтного генератора
+(Linear congruential generator) с
+начальным значением 1234, мультипликатором (a) 1103515245, инкрементом (c) 12345
+и модулем 2^31.
+Затем вызов destroy освобождает память, выделенную функцией random_create.
+  </p>
+  <p>
+   Функция next должна возвращать
+   <i>
+    следующий
+   </i>
+   элемент псевдослучайной
+последовательности отнсительно текущего состояния.
+  </p>
+  <p>
+   Сдаваемый на проверку фрагмент программы должен содержать
+определение структур RandomOperations, RandomGenerator определение функции
+random_create и других функций, кроме main.
+  </p>
+  <p>
+   <b>
+    Указание.
+   </b>
+   Структуру с указателями на функции можно
+сделать глобальной константой и использовать ее для всех создаваемых
+объектов.
+  </p>
+ </body>
+</html>
