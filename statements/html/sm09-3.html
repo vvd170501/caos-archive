@@ -1,0 +1,71 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <table border="1">
+   <tr>
+    <td>
+     <b>
+      Time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      1 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Real time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      5 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Memory limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      64M
+     </tt>
+    </td>
+   </tr>
+  </table>
+  <h3>
+   Problem sm09-3: asm/data-structures/struct-6
+  </h3>
+  <p>
+   Дан тип структуры:
+  </p>
+  <pre>struct S
+{
+    int m1[16];
+    int m2[16];
+};</pre>
+  <p>
+   На языке ассемблера x86 напишите подпрограмму
+   <tt>
+    process
+   </tt>
+   с прототипом:
+  </p>
+  <pre>uint32_t process(struct S *p, int i, int j);</pre>
+  <p>
+   Подпрограмма должна вернуть значение
+  </p>
+  <pre>(p-&gt;m1[i] + p-&gt;m2[j]) / 2</pre>
+  <p>
+   При вычислении переполнение и выходы за границы массива не проверять.
+  </p>
+ </body>
+</html>
