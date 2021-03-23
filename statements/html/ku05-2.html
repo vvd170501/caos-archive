@@ -1,0 +1,73 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <table border="1">
+   <tr>
+    <td>
+     <b>
+      Time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      1 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Real time limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      5 s
+     </tt>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <b>
+      Memory limit:
+     </b>
+    </td>
+    <td>
+     <tt>
+      64M
+     </tt>
+    </td>
+   </tr>
+  </table>
+  <h3>
+   Problem ku05-2: kr05-2 (дореш)
+  </h3>
+  <p>
+   Дан тип структуры:
+  </p>
+  <pre>struct Data
+{
+    int A, B, C, D;
+};</pre>
+  <p>
+   На языке ассемблера x86 напишите функцию с прототипом:
+  </p>
+  <pre>long long process(const struct Data *p);</pre>
+  <p>
+   Функция должна вычислять выражение
+  </p>
+  <pre>(long long) p-&gt;A * (long long) p-&gt;C + (long long) p-&gt;B * (long long) p-&gt;D</pre>
+  <p>
+   Если при вычислении возникло переполнение, должно возвращаться значение 0.
+  </p>
+  <p>
+   Например, для структуры
+   <tt>
+    { 1, 2, 3, 4 }
+   </tt>
+   должно возвращаться значение 11.
+  </p>
+ </body>
+</html>
