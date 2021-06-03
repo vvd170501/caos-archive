@@ -1,105 +1,29 @@
-<html>
- <head>
-  <meta charset="utf-8"/>
- </head>
- <body>
-  <table border="1">
-   <tr>
-    <td>
-     <b>
-      Time limit:
-     </b>
-    </td>
-    <td>
-     <tt>
-      3 s
-     </tt>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <b>
-      Real time limit:
-     </b>
-    </td>
-    <td>
-     <tt>
-      3 s
-     </tt>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <b>
-      Memory limit:
-     </b>
-    </td>
-    <td>
-     <tt>
-      256M
-     </tt>
-    </td>
-   </tr>
-  </table>
-  <h3>
-   Problem sm23-5: c++/thread/vector-callback-1
-  </h3>
-  <p>
-   Разработайте шаблонную функцию
-   <tt>
-    async_vector
-   </tt>
-   с прототипом:
-  </p>
-  <pre>
+<html><head><meta charset="utf-8"/></head>
+<body>
+<table border="1"><tr><td><b>Time limit:</b></td><td><tt>3 s</tt></td></tr>
+<tr><td><b>Real time limit:</b></td><td><tt>3 s</tt></td></tr>
+<tr><td><b>Memory limit:</b></td><td><tt>256M</tt></td></tr>
+</table>
+<h3>Problem sm23-5: c++/thread/vector-callback-1</h3>
+<p>Разработайте шаблонную функцию <tt>async_vector</tt>
+с прототипом:</p>
+<pre>
 template&lt;class Input, class Output, class Function, class Callback&gt;
 void async_vector(const std::vector&lt;Input&gt; ins, Function &amp;&amp;f, Callback &amp;&amp;c);
 </pre>
-  <p>
-   Функция работает следующим образом:
-для каждого элемента вектора
-   <tt>
-    ins
-   </tt>
-   с помощью функции
-   <tt>
-    async_launch
-   </tt>
-   (см. задачу c++/thread/launch-callback-1)
-запускается асинхронная функция
-   <tt>
-    f
-   </tt>
-   . Результат,
-который вырабатывает функция
-   <tt>
-    f
-   </tt>
-   , добавляется в вектор типа
-   <tt>
-    std::vector&lt;Output&gt;
-   </tt>
-   . Когда весь входной вектор будет
-обработан, запускается функция
-   <tt>
-    c
-   </tt>
-   , которой по константной
-ссылке передается вектор результатов.
-  </p>
-  <p>
-   Функция
-   <tt>
-    async_vector
-   </tt>
-   должна завершиться немедленно,
+<p>Функция работает следующим образом:
+для каждого элемента вектора <tt>ins</tt> с помощью функции
+<tt>async_launch</tt> (см. задачу c++/thread/launch-callback-1)
+запускается асинхронная функция <tt>f</tt>. Результат,
+который вырабатывает функция <tt>f</tt>, добавляется в вектор типа
+<tt>std::vector&lt;Output&gt;</tt>. Когда весь входной вектор будет
+обработан, запускается функция <tt>c</tt>, которой по константной
+ссылке передается вектор результатов.</p>
+<p>Функция <tt>async_vector</tt> должна завершиться немедленно,
 ожидание завершения обработки всех элементов вектора
-не допускается.
-  </p>
-  <p>
-   Например:
-  </p>
-  <pre>
+не допускается.</p>
+<p>Например:</p>
+<pre>
 int incr(int a)
 {
     return a + 1;
@@ -121,8 +45,5 @@ int main()
     std::this_thread::sleep_for(500ms);
 }
 </pre>
-  <p>
-   На стандартный поток вывода будут выведены числа 2, 3, 4, 5, 6 в произвольном порядке.
-  </p>
- </body>
-</html>
+<p>На стандартный поток вывода будут выведены числа 2, 3, 4, 5, 6 в произвольном порядке.</p>
+</body></html>
